@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Upload Result</title>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header"><h1 class="display-6">Upload Result <a th:href="@{/}" class="btn btn-primary btn-sm">Back</a></h1></div>
+        <div class="card-body">
+            <p>Description: <span th:text="${description}"></span></p>
+            <ul th:each="file: ${uploadedFiles}">
+                <li><img th:src="${file.key}" th:alt="${file.key}" class="img-thumbnail"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
